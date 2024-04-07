@@ -5,18 +5,18 @@ import PostItem from './components/PostItem';
 import Pagination from './components/Pagination';
 
 function App() {  
-  const [posts, setPosts] = useState([]);
+  const [posts, setPosts] = useState([]); 
   const [loading, setLoading] = useState(false);
-
   const [currentPage, setCurrentPage] = useState(1);
-  const [recordPerPage, setRecordPerPage] = useState(1);
+  const [recordPerPage] = useState(3);
   const indexOfLastRecord = currentPage * recordPerPage;
   const indexOfFirstRecord = indexOfLastRecord - recordPerPage;
   const currentRecords = posts.slice(indexOfFirstRecord, 
     indexOfLastRecord);
+    
+  const nPages = Math.ceil(posts.length / recordPerPage)
 
-  useEffect(() => {
-    setLoading(true);
+  useEffect(() => { 
     fetchPosts();
   }, [])
 
@@ -33,23 +33,26 @@ function App() {
     //   .then((response) => {
     //     setPosts(response) 
     //   })
-
+    setLoading(true)
     await axios.get('Data.json')
         .then(data => {
           setPosts(data.data);
+          setLoading(false)
         })
         .catch(error => {
-          console.error(error);
+          alert(error);
+          setLoading(false)
         })
   }
 
 
-  const nPages = Math.ceil(posts.length / recordPerPage)
 
   return (
     <div className="app container">
       <h1 style={{textAlign:'center', margin:'40px auto'}}>Pagination in React</h1>
+      
       <div className="posts">
+        { loading && <span>Loading...</span>}
         {currentRecords.length ? (currentRecords.map(post => <PostItem key={post.id} post={post} />)) : 'No Posts'}
       </div>
       <Pagination
