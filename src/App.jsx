@@ -8,14 +8,14 @@ function App() {
   const [posts, setPosts] = useState([]); 
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const [recordPerPage] = useState(3);
+  const [recordPerPage] = useState(2);
   const indexOfLastRecord = currentPage * recordPerPage;
   const indexOfFirstRecord = indexOfLastRecord - recordPerPage;
   const currentRecords = posts.slice(indexOfFirstRecord, 
     indexOfLastRecord);
     
   const nPages = Math.ceil(posts.length / recordPerPage)
-
+  
   useEffect(() => { 
     fetchPosts();
   }, [])

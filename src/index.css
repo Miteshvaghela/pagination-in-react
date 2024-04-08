@@ -10,7 +10,7 @@
     font-weight: bold;
     color:#fff;
     background:#f0f0f0;
-    margin: 0px 5px;
+    margin: 0px 3px;
     padding:10px;
 }
 .pagination li.active a{
@@ -19,4 +19,16 @@
 }
 .pagination li .fixed{
     background:#a7a7a7;
+}
+.pagination li:first-child .fixed{
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+.pagination li:last-child .fixed{
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
