@@ -1,38 +1,9 @@
 [
     {
         "id": 1,
-        "first_name": "John",
-        "last_name": "Doe",
-        "city": "Maharashtra"
-    },
-    {
-        "id": 2,
-        "first_name": "Mitesh",
-        "last_name": "Vaghela",
-        "city": "Gujarat"
-    },
-    {
-        "id": 3,
-        "first_name": "Rahul",
-        "last_name": "Saxena",
-        "city": "MP"
-    },
-    {
-        "id": 4,
-        "first_name": "Jeet",
-        "last_name": "Parmar",
-        "city": "Gujarat"
-    },
-    {
-        "id": 6,
-        "first_name": "Jack",
-        "last_name": "Parmar",
-        "city": "Gujarat"
-    },
-    {
-        "id": 7,
-        "first_name": "Ronak",
-        "last_name": "Vaghela",
-        "city": "Delhi"
+        "fullname": "Mitesh vaghela",
+        "profession": "Software engineer",
+        "from": "Gujarat",
+        "aboutYourself": "I love exporing new places and do moto vlogging."
     }
 ]

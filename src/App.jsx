@@ -3,13 +3,16 @@ import './App.css'
 import axios from 'axios';
 import PostItem from './components/PostItem';
 import Pagination from './components/Pagination';
-
+import Button from 'react-bootstrap/Button';
+import AddPostForm from './components/AddPostForm';
 
 function App() {  
   const [posts, setPosts] = useState([]); 
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [recordPerPage] = useState(3);
+  const [showForm, setShowForm] = useState(false);
+
   const indexOfLastRecord = currentPage * recordPerPage;
   const indexOfFirstRecord = indexOfLastRecord - recordPerPage;
   const currentRecords = posts.slice(indexOfFirstRecord, 
@@ -46,21 +49,27 @@ function App() {
         })
   }
 
+  const addPost = () => {
+    setShowForm(!showForm);
+  }
 
 
   return (
     <div className="app container">
-      <h1 style={{textAlign:'center', margin:'40px auto'}}>Pagination in React</h1>
-      
-      <div className="posts">
-        { loading && <span>Loading...</span>}
-        {currentRecords.length ? (currentRecords.map(post => <PostItem key={post.id} post={post} />)) : 'No Posts'}
+      <h1 style={{textAlign:'center', margin:'40px auto', color:'white'}}>Pagination in React</h1>
+      <div className="block">
+        <Button variant="primary" onClick={addPost}>Add Post</Button>
       </div>
       <Pagination
                 nPages={nPages}
                 currentPage={currentPage}
                 setCurrentPage={setCurrentPage}
             />
+      <div className="posts">
+        { loading && <span>Loading...</span>}
+        {currentRecords.length ? (currentRecords.map(post => <PostItem key={post.id} post={post} />)) : 'No Posts'}
+      </div>
+     {showForm && <AddPostForm setShowForm={setShowForm}/>}
     </div>
   )
 }

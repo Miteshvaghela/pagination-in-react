@@ -10,9 +10,9 @@
 }
 body{
     background:linear-gradient(#606060, #000000);
-    background-size: contain;
-    height: 100vh;
-    
+    background-size:cover;
+    height: 100%;
+    background-position: fixed;
 }
 .posts{
     display:flex;
