@@ -9,16 +9,16 @@
     text-decoration: none;
     font-weight: bold;
     color:#fff;
-    background:#f0f0f0;
+    background:#000000;
     margin: 0px 3px;
     padding:10px;
 }
 .pagination li.active a{
-    color:#fff;
+    color:#000000;
     background:#c3c1c1;
 }
 .pagination li .fixed{
-    background:#a7a7a7;
+    background:#000000;
 }
 .pagination li:first-child .fixed{
     border-top-left-radius: 10px;

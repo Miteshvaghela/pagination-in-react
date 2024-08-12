@@ -8,6 +8,11 @@
    width:90%;
    margin:auto;
 }
+body{
+    background:linear-gradient(#f9f9f9, #a3a8bc);
+    background-size: contain;
+    height: 100vh;
+}
 .posts{
     display:flex;
     flex-direction: column;

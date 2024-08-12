@@ -4,11 +4,12 @@ import axios from 'axios';
 import PostItem from './components/PostItem';
 import Pagination from './components/Pagination';
 
+
 function App() {  
   const [posts, setPosts] = useState([]); 
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const [recordPerPage] = useState(2);
+  const [recordPerPage] = useState(3);
   const indexOfLastRecord = currentPage * recordPerPage;
   const indexOfFirstRecord = indexOfLastRecord - recordPerPage;
   const currentRecords = posts.slice(indexOfFirstRecord, 

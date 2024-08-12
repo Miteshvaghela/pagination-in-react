@@ -22,5 +22,17 @@
         "first_name": "Jeet",
         "last_name": "Parmar",
         "city": "Gujarat"
+    },
+    {
+        "id": 6,
+        "first_name": "Jack",
+        "last_name": "Parmar",
+        "city": "Gujarat"
+    },
+    {
+        "id": 7,
+        "first_name": "Ronak",
+        "last_name": "Vaghela",
+        "city": "Delhi"
     }
 ]
