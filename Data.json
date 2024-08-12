@@ -1,9 +1,32 @@
-[
+{
+  "posts": [
     {
-        "id": 1,
-        "fullname": "Mitesh vaghela",
-        "profession": "Software engineer",
-        "from": "Gujarat",
-        "aboutYourself": "I love exporing new places and do moto vlogging."
+      "id": "14543",
+      "name": "Mitesh k. vaghela",
+      "profession": "Software engineer",
+      "from": "India",
+      "aboutYourself": "Traveller, and funloving person"
+    },
+    {
+      "id": "16564",
+      "name": "Jack doe",
+      "profession": "Painter",
+      "from": "Italy",
+      "aboutYourself": "Joyful person with artistic mind"
+    },
+    {
+      "id": "13427",
+      "name": "Bruse Waine",
+      "profession": "Business man",
+      "from": "Australia",
+      "aboutYourself": "Hi there,"
+    },
+    {
+      "id": "12790",
+      "name": "Peter parker",
+      "profession": "Spiderman",
+      "from": "USA",
+      "aboutYourself": "Spider guy"
     }
-]
+  ]
+}

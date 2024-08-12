@@ -1,22 +1,30 @@
 import React, { useState } from 'react'
 import { Button, Modal, Form } from 'react-bootstrap';
 
-const AddPostForm = ({ setShowForm }) => {
+const AddPostForm = ({ setShowForm, savePostData }) => {
+
 const [show, setShow] = useState(true);
+const [inputs, setInputs] = useState('');
+
+const updateInputs = (e) => {
+    setInputs({ ...inputs, [e.target.id]: e.target.value })
+}
+
 const handleClose = () => { 
     setShow(!show);
     setShowForm(!show); 
 }
 const handleSave = () => {
-
-    const [username, setUsername] = useState('');
-    const [profession, setProfession] = useState('');
-    const [from, setFrom] = useState('');
-    const [aboutYourself, setAboutYourself] = useState('');
-
-
     
+    if(!inputs.name || !inputs.profession || !inputs.from){
+        alert('Please fill all the fields')
+        return false;
+    };
 
+    savePostData(inputs);
+
+    // after validation done
+    // savePostData(inputs);
 }
   return (
     <>
@@ -26,12 +34,14 @@ const handleSave = () => {
         </Modal.Header>
         <Modal.Body>
           <Form>
-            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-              <Form.Label>Username</Form.Label>
+            <Form.Group className="mb-3">
+              <Form.Label>Name</Form.Label>
               <Form.Control
                 type="text"
                 placeholder="Jack sparrow"
                 autoFocus
+                id="name"
+                onChange={(e) => updateInputs(e)}
               />
             </Form.Group>
 
@@ -40,23 +50,25 @@ const handleSave = () => {
               <Form.Control
                 type="text"
                 placeholder="ie. Programmer"
-                autoFocus
+                id="profession"
+                onChange={(e) => updateInputs(e)}
               />
             </Form.Group>
 
-            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+            <Form.Group className="mb-3">
               <Form.Label>Where are you from?</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="Gujarat"
-                autoFocus
+                placeholder="India"
+                id="from"
+                onChange={(e) => updateInputs(e)}
               />
             </Form.Group>
             <Form.Group
               className="mb-3"
             >
               <Form.Label>About yourself?</Form.Label>
-              <Form.Control as="textarea" rows={3} />
+              <Form.Control as="textarea" rows={3} id="aboutYourself" onChange={(e) => updateInputs(e)} />
             </Form.Group>
           </Form>
         </Modal.Body>
